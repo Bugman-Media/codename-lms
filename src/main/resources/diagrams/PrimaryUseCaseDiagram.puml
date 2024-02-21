@@ -1,0 +1,31 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+left to right direction
+
+actor ResponsableDeModule as rdm
+actor Technician as tch
+actor Gestionaire as gs
+
+package SystemeGestionLaboratoire {
+    usecase "Creation des commandes" as rdc
+    usecase "Valider les commandes" as vlc
+    usecase "Generer le recapulatif d'une commands" as grc
+}
+
+rdm ---> rdc
+tch ---> rdc
+gs ---> vlc
+gs ---> grc
+
+'
+'note right of Admin : This is an example.
+'
+'note right of (Use)
+'A note can also
+'be on several lines
+'end note
+'
+'note "This note is connected\nto several objects." as N2
+'(Start) .. N2
+'N2 .. (Use)
+@enduml
