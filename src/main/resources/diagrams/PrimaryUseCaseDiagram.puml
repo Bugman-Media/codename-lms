@@ -10,6 +10,7 @@ package SystemeGestionLaboratoire {
     usecase "Creation des commandes" as rdc
     usecase "Valider les commandes" as vlc
     usecase "Generer le recapulatif d'une commands" as grc
+    usecase "Login"
 }
 
 rdm ---> rdc
@@ -17,6 +18,9 @@ tch ---> rdc
 gs ---> vlc
 gs ---> grc
 
+rdc ..> Login : include
+vlc ..> Login : include
+grc ..> Login : include
 '
 'note right of Admin : This is an example.
 '
